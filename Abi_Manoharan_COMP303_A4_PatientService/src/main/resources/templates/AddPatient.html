@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+	<title>Add Patient</title>
+	<link rel="stylesheet" th:href="@{style.css}"> 
+</head>
+<body>
+	<header>
+		<div class="nav">
+			<div class = links>
+				<a href="http://localhost:2222/">Patient</a>
+				<a href="http://localhost:3333/">Blood Stock</a>
+				<a href="http://localhost:4444/">Blood Stock</a>
+		 	</div>
+		</div>
+		
+		<div class="navOne">
+			<div class = links>
+				  <a href="/">Patient List</a>
+				  <a href="/add-patient-page">Add Patient</a>
+		 	</div>
+		</div>
+	</header>
+	
+    <form action="#" th:action="@{/add-patient}" th:object="${patient}" method="post">
+		  <label for="fName">Patient First Name</label>
+	      <input type="text" id="fName" th:field="*{firstName}" />
+          
+          <label for="lName">Patient Last Name</label>
+	      <input type="text" id="lName" th:field="*{lastName}" />
+          
+          <label for="age">Age</label>
+	      <input type="number" id="age" th:field="*{age}" />
+          
+          <label for="gender">Gender</label>
+	      <input type="text" id="gender" th:field="*{gender}" />
+          
+          <label for="bloodGroup">Blood Group</label>
+	      <input type="text" id="bloodGroup" th:field="*{bloodGroup}" />
+          
+          <label for="city">City</label>
+	      <input type="text" id="city" th:field="*{city}" />
+          
+          <label for="phoneNumber">Phone Number</label>
+	      <input type="number" id="phoneNumber" th:field="*{phoneNumber}" />
+	      
+          <p><input type="submit" value="Submit" /> </p>
+    </form>
+</body>
+</html>

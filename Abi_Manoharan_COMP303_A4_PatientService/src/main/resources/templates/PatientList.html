@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+	<title>Patient List</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<link rel="stylesheet" th:href="@{style.css}"> 
+</head>
+<body>
+
+	<header>
+		<div class="nav">
+			<div class = links>
+				<a href="http://localhost:2222/">Patient</a>
+				<a href="http://localhost:3333/">Blood Stock</a>
+				<a href="http://localhost:4444/">Blood Stock</a>
+		 	</div>
+		</div>
+		
+		<div class="navOne">
+			<div class = links>
+				  <a href="/">Patient List</a>
+				  <a href="/add-patient-page">Add Patient</a>
+		 	</div>
+		</div>
+	</header>
+	
+	<table>
+	<tr>
+		<th>ID</th>
+		<th>First Name</th>	
+		<th>Last Name</th>
+		<th>Age</th>		
+		<th>Gender</th>
+		<th>Blood Group</th>		
+		<th>City</th>
+		<th>Phone Number</th>			
+	</tr>
+    <tr th:each="patient: ${patients}">
+        <td th:text="${patient.patientId}" />
+        <td th:text="${patient.firstName}" />
+        <td th:text="${patient.lastName}" />
+        <td th:text="${patient.age}" />
+        <td th:text="${patient.gender}" />
+        <td th:text="${patient.bloodGroup}" />
+        <td th:text="${patient.city}" />
+        <td th:text="${patient.phoneNumber}" />
+        <td>
+         	<form action="#" th:action="@{'/update-page/{patientId}'(patientId=${patient.patientId})}" th:method="GET">	
+  				<button type="submit">Update</button>
+			</form>
+		</td>
+		<td>
+         	<form action="#" th:action="@{'/delete/{patientId}'(patientId=${patient.patientId})}" th:method="POST">	
+  				<button type="submit">Delete</button>
+			</form>
+		</td>
+    </tr>
+</table>
+</body>
+</html>

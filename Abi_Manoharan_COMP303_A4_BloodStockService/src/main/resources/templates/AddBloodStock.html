@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+	<title>Add Blood Stock</title>
+	<link rel="stylesheet" th:href="@{style.css}"> 
+</head>
+<body>
+	<header>
+		<div class="nav">
+			<div class=links>
+				<a href="http://localhost:2222/">Patient</a>
+				<a href="http://localhost:3333/">Blood Bank</a>
+				<a href="http://localhost:4444/">Blood Stock</a>
+			</div>
+		</div>
+
+		<div class="navOne">
+			<div class=links>
+				<a href="/">Blood Stock List</a>
+				<a href="/add-bloodStock-page">Add Blood Stock</a>
+			</div>
+		</div>
+	</header>
+    <form action="#" th:action="@{/add-bloodStock}" th:object="${bloodStock}" method="post">
+		  <label for="bloodGroup">Blood Group</label>
+	      <input type="text" id="bloodGroup" th:field="*{bloodGroup}" required />
+         
+          <label for="quantity">Quantity</label>
+	      <input type="number" id="quantity" th:field="*{quantity}" required/>
+                   
+          <label for="bestBefore">Best Before</label>
+	      <input type="date" id="bestBefore" th:field="*{bestBefore}" required /><br><br>
+	      
+          <label for="status">Status</label>
+	      <input type="text" id="status" th:field="*{status}" required/>
+ 
+          <p><input type="submit" value="Submit" /> </p>
+    </form>
+</body>
+</html>

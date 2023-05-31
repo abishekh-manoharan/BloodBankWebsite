@@ -1,0 +1,86 @@
+@charset "UTF-8";
+
+html {
+	width: 980px;
+	margin-left: auto;
+	margin-right: auto;
+	font-family: Arial, Helvetica, sans-serif;
+	
+}
+
+table {
+  width: 100%;
+}
+
+th{
+	font-size: 1.2em;
+}
+
+table, th, td {
+    border-collapse: collapse;
+    border: 1px;
+    font-family: sans-serif;
+    text-align: center;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
+}
+
+.nav {
+  background-color: #a7d4ff	;
+  overflow: hidden;
+  height: 30px;
+}
+
+.nav a {
+	text-align: center;
+	padding: 20px;
+	text-decoration: none;
+	color: black;
+}
+
+
+.navOne {
+  background-color: #1e90ff	;
+  overflow: hidden;
+  height: 30px;
+  margin-bottom: 15px;
+}
+
+.navOne a {
+	text-align: center;
+	padding: 20px;
+	text-decoration: none;
+	color: white;
+}
+
+a:hover {
+	font-size: 1.1em;
+}
+
+.links {
+	text-align: center;
+  	margin: auto;
+  	padding-top: 5px;
+  	width: 50%;
+  	height: 50%;
+}
+
+input[type=text], select, input[type=number] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+input[type=submit] {
+  width: 100%;
+  background-color: #1e90ff;
+  color: white;
+  padding: 14px 20px;
+}
+
+input[type=submit]:hover {
+  background-color: #45b049;
+}

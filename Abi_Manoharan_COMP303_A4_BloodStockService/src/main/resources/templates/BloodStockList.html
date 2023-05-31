@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Blood Stock List</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<link rel="stylesheet" th:href="@{/style.css}">
+</head>
+
+<body>
+
+	<header>
+		<div class="nav">
+			<div class=links>
+				<a href="http://localhost:2222/">Patient</a>
+				<a href="http://localhost:3333/">Blood Stock</a>
+				<a href="http://localhost:4444/">Blood Stock</a>
+			</div>
+		</div>
+
+		<div class="navOne">
+			<div class=links>
+				<a href="/">Blood Stock List</a>
+				<a href="/add-bloodStock-page">Add Blood Stock</a>
+			</div>
+		</div>
+	</header>
+
+	<table>
+		<tr>
+			<th>ID</th>
+			<th>Blood Group</th>
+			<th>Quantity</th>
+			<th>BestBefore</th>
+			<th>Status</th>
+		</tr>
+		<tr th:each="bloodStock: ${bloodStocks}">
+			<td th:text="${bloodStock.bloodStockId}" />
+			<td th:text="${bloodStock.bloodGroup}" />
+			<td th:text="${bloodStock.quantity}" />
+			<td th:text="${bloodStock.bestBefore}" />
+			<td th:text="${bloodStock.status}" />
+			<td>
+				<form action="#" th:action="@{'/update-page/{bloodStockId}'(bloodStockId=${bloodStock.bloodStockId})}"
+					th:method="GET">
+					<button type="submit">Update</button>
+				</form>
+			</td>
+			<td>
+				<form action="#" th:action="@{'/delete/{bloodStockId}'(bloodStockId=${bloodStock.bloodStockId})}"
+					th:method="POST">
+					<button type="submit">Delete</button>
+				</form>
+			</td>
+		</tr>
+	</table>
+</body>
+
+</html>
